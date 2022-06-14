@@ -1,7 +1,29 @@
 #include "Main.h"
 
 wxBEGIN_EVENT_TABLE(Main, wxFrame)
-
+EVT_BUTTON(1, Main::OnButtonClicked)
+EVT_BUTTON(2, Main::OnButtonClicked)
+EVT_BUTTON(3, Main::OnButtonClicked)
+EVT_BUTTON(4, Main::OnButtonClicked)
+EVT_BUTTON(5, Main::OnButtonClicked)
+EVT_BUTTON(6, Main::OnButtonClicked)
+EVT_BUTTON(7, Main::OnButtonClicked)
+EVT_BUTTON(8, Main::OnButtonClicked)
+EVT_BUTTON(9, Main::OnButtonClicked)
+EVT_BUTTON(10, Main::OnButtonClicked)
+EVT_BUTTON(11, Main::OnButtonClicked)
+EVT_BUTTON(12, Main::OnButtonClicked)
+EVT_BUTTON(13, Main::OnButtonClicked)
+EVT_BUTTON(14, Main::OnButtonClicked)
+EVT_BUTTON(15, Main::OnButtonClicked)
+EVT_BUTTON(16, Main::OnButtonClicked)
+EVT_BUTTON(17, Main::OnButtonClicked)
+EVT_BUTTON(18, Main::OnButtonClicked)
+EVT_BUTTON(19, Main::OnButtonClicked)
+EVT_BUTTON(20, Main::OnButtonClicked)
+EVT_BUTTON(21, Main::OnButtonClicked)
+EVT_BUTTON(22, Main::OnButtonClicked)
+EVT_BUTTON(23, Main::OnButtonClicked)
 
 
 wxEND_EVENT_TABLE()
@@ -41,5 +63,114 @@ Main::~Main()
 
 void Main::OnButtonClicked(wxCommandEvent& evt)
 {
+	int id = evt.GetId();
 
+	switch (id)
+	{
+	case 1: {
+		textbox->AppendText("");
+		break;
+	}
+	case 2: {
+		textbox->AppendText("0");
+		break;
+	}
+	case 3: {
+		textbox->AppendText(".");
+		break;
+	}
+	case 4: {
+		textbox->AppendText("");
+		break;
+	}
+	case 5: {
+		textbox->AppendText("1");
+		break;
+	}
+	case 6: {
+		textbox->AppendText("2");
+		break;
+	}
+	case 7: {
+		textbox->AppendText("3");
+		break;
+	}
+	case 8: {
+		textbox->AppendText("+");
+		break;
+	}
+	case 9: {
+		textbox->AppendText("4");
+		break;
+	}
+	case 10: {
+		textbox->AppendText("5");
+		break;
+	}
+	case 11: {
+		textbox->AppendText("6");
+		break;
+	}
+	case 12: {
+		textbox->AppendText("-");
+		break;
+	}
+	case 13: {
+		textbox->AppendText("7");
+		break;
+	}
+	case 14: {
+		textbox->AppendText("8");
+		break;
+	}
+	case 15: {
+		textbox->AppendText("9");
+		break;
+	}
+	case 16: {
+		textbox->AppendText("*");
+		break;
+	}
+	case 17: {
+		textbox->Clear();
+		break;
+	}
+	case 18: {
+		textbox->Clear();
+		break;
+	}
+	case 19: {
+		textbox->AppendText("/");
+		break;
+	}
+	case 20: {
+		textbox->AppendText("%");
+		break;
+	}
+	case 21: {
+		wxString text = textbox->GetValue();
+		int number = wxAtoi(text);
+
+		int binary = 0;
+		int remainder;
+		int product = 1;
+		
+		while (number != 0) {
+			remainder += (number % 2 == 0 ? "0" : "1");
+			number /= 2;
+		}
+		wxString stringnumber = wxString::Format(wxT("%i"), number);
+		//textbox->Clear();
+		textbox->AppendText(stringnumber);
+		break;
+	}
+	case 22: {
+		textbox->AppendText("");
+		break;
+	}
+	case 23: {
+		textbox->AppendText("");
+		break;
+	}
+	}
 }
